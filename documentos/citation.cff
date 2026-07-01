@@ -1,0 +1,23 @@
+message: Please cite this software using these metadata.
+title: Leadflow
+authors:
+- family-names: Honorato
+given-names: Hylbert
+- family-names: Toth
+given-names: Lucas
+- name-suffix: Professor
+affiliation: PUC Minas
+family-names: de Almeida Tôrres
+given-names: Viviâne
+keywords:
+- crm
+- crud
+- customer
+- relashionship
+- management
+- html
+- javascript
+- css
+repository-code: Link para o repositório
+version: 1.0.0
+date-released: 2026-06-21
