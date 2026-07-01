@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LeadFlow</title>
+        <meta name="description" content="CRM para micro e pequenos empreendedores">
+        <meta name="author" content="Lucas Toth e Hylbert Honorato">
+        <meta name="keyword" content="crm, lead, vendas">
+        <link rel="stylesheet" href="../styles/base.css">
+        <link rel="stylesheet" href="../styles/components.css">
+        <link rel="stylesheet" href="../styles/pages.css">
+        <link rel="stylesheet" href="../styles/responsive.css">
+        <script src="../scripts/login.js" defer></script>
+        <script src="../scripts/suporte.js" defer></script>
+    </head>
+
+    <body>
+            <div class="login_container">
+                <h1>Transforme
+                    contatos em
+                    oportunidade</h1> <br>
+                <br>
+                <label>Usuário ou E-mail</label> <br>
+                <input class="form_field" type="text" id="loginUsuario" maxlength="30" required>
+                
+                <label>Senha</label> <br>
+                <input class="form_field" type="password" id="loginSenha" maxlength="20" required> 
+
+                <label>Empresa</label><br>
+                <select id="selectEmpresa" class="form_field" required>
+                    <option value="" disabled selected hidden>Empresas dísponíveis</option>
+                    <option>LeadFlow</option>
+                </select>
+                
+                <button class="login_button" onclick="login()">Log In</button>    
+
+                <p class="cadastre-se">
+                Ainda não tem conta? <a href="cadastro.html">Cadastre-se</a>
+                </p><br>
+
+                <p class="support_text">
+                    Precisa de ajuda?
+                    <span onclick="abrirModalSuporte()">
+                       Fale com o Suporte
+                    </span>
+                </p>
+                    
+            </div>
+
+            <div class="hero_container">
+                <img class="hero_image" src="../assets/hero.svg" alt="Imagem do logo do LeadFlow">
+            </div>
+
+            <div id="modalSuporte" class="modal">
+                <div class="modal_content">
+
+                    <div class="support_icon">
+                        💬
+                    </div>
+
+                    <h2 id="tituloSuporte">Fale com o Suporte</h2>
+                    <p id="subtituloSuporte" class="modal_subtitle">
+                        Envie sua dúvida, problema ou sugestão.
+                    </p>
+
+                    <label>Nome</label>
+                    <input class="form_field" id="suporteNome" type="text" placeholder="Seu nome">
+
+                    <label>E-mail</label>
+                    <input class="form_field" id="suporteEmail" type="email" placeholder="Seu e-mail">
+
+                    <label>Tipo</label>
+                    <select class="form_field" id="suporteTipo">
+                        <option value="">Selecione um tipo</option>
+                        <option>Dúvida</option>
+                        <option>Problema</option>
+                        <option>Sugestão</option>
+                        <option>Feedback</option>
+                    </select>
+
+                    <label>Descrição</label>
+                    <textarea class="form_field" id="suporteMensagem" placeholder="Descreva sua Solicitação" maxlength="500"></textarea>
+
+                    <span id="contadorMensagem">
+                        0/500
+                    </span>
+
+                    <div class="modal_actions">
+                        <button class="btn_cancelar" onclick="fecharModalSuporte()">Cancelar</button>
+                        <button class="btn_enviar" onclick="enviarSuporte()">Enviar</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="modalFeedback" class="modal">
+               <div class="modal_content">
+
+                  <h2 id="modalFeedbackTitulo"></h2>
+
+                  <p id="modalFeedbackMensagem"></p>
+
+                  <button onclick="fecharModalFeedback()">
+                     OK
+                  </button>
+
+                </div>
+            </div>
+
+    </body>
+</html>

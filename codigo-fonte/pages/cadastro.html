@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro LeadFlow</title>
+        <link rel="stylesheet" href="../styles/base.css">
+        <link rel="stylesheet" href="../styles/components.css">
+        <link rel="stylesheet" href="../styles/pages.css">
+        <link rel="stylesheet" href="../styles/responsive.css">
+        <script src="../scripts/login.js" defer></script>
+    </head>
+
+    <body>
+
+        <div class="login_container">
+            <h1 class="cadastro_title">Seus leads esperam</h1><br><br>
+
+            <label>Usuário</label><br>
+            <input class="form_field" type="text" id="cadastroUsuario" maxlength="20">
+
+            <label>E-mail</label><br>
+            <input class="form_field" type="email" id="cadastroEmail" maxlength="30">
+
+            <label>Senha</label><br>
+            <input class="form_field" type="password" id="cadastroSenha" maxlength="20" minlength="6">
+
+            <label>Função</label>
+            <select class="form_field" id="cargo">
+                <option value="" disabled selected hidden>Disponíveis</option>
+                <option value="gestor">Gestor</option>
+                <option value="vendedor">Vendedor</option>
+                <option value="suporte">Suporte</option>
+            </select>
+
+            <div id="campoGestor" style="display: none;">
+                <label>Crie uma Empresa</label><br>
+                <input class="form_field" type="text" placeholder="Nome da empresa" id="empresa">
+            </div>
+
+            <button type="button" class="cadastro_button" onclick="cadastrar()">Criar Conta</button>
+
+            <p class="entrar">
+                Já tem conta? <a href="index.html">Faça o login</a>
+            </p>
+        </div>
+
+        <div class="hero_container">
+            <img class="hero_image" src="../assets/logo_vazada.svg" alt="Imagem do logo do LeadFlow">
+        </div>
+
+        <div id="modalFeedback" class="modal">
+            <div class="modal_content">
+                <h2 id="modalFeedbackTitulo"></h2>
+                <p id="modalFeedbackMensagem"></p>
+                <button onclick="fecharModalFeedback()">OK</button>
+            </div>
+        </div>
+        
+    </body>
+</html>

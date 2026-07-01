@@ -1,0 +1,1459 @@
+/*
+--------------------
+=======Login========
+--------------------
+*/
+
+.login_container {
+    width: 40%;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero_container {
+    width: 60%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    height: 130%;
+    max-width: auto;
+}
+
+/*
+--------------------
+======Cadastro======
+--------------------
+*/
+
+.cadastro_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1b1b1b;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #8E4BAA
+}
+
+.logo_vazada_image {
+    position: fixed;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;
+}
+
+/*
+--------------------
+======Side Menu======
+--------------------
+*/
+
+/* LOGO SIDEBAR*/
+.logo_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+
+/* USER OPTIONS (topo) */
+.user_options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+/* BASE (todos os botões redondos) */
+.user_profile,
+.settings,
+.notifications {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* AVATAR */
+.user_profile {
+    background: #1B1B1B;
+    cursor: pointer;
+}
+
+/* OUTROS ÍCONES (com hover) */
+.settings,
+.notifications {
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+/* HOVER SOMENTE AQUI */
+.settings:hover,
+.notifications:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: scale(1.05);
+}
+
+/* AJUSTE DOS ÍCONES */
+.user_avatar {
+    opacity: 0.7;
+    transition: 0.2s;
+    filter: brightness(0.7);
+    color: white;
+}
+
+.user_profile:hover {
+    background: rgba(255, 255, 255, 0.08);
+    .user_avatar {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.settings_icon,
+.notifications_icon {
+    opacity: 0.9;
+}
+
+
+/* MENU */
+.menu {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* ITEM */
+.menu_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu_item p {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ÍCONE */
+.menu_icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.8;
+}
+
+/* HOVER */
+.menu_item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    p {
+        font-weight: 700;
+    }
+}
+
+/* DIVIDER */
+.menu_item .divider {
+    margin-top: 12px;
+}
+
+/* LOGOUT FIXO EMBAIXO */
+.menu_item:last-child {
+    margin-top: auto;
+    opacity: 0.7;
+}
+
+.menu_item:last-child:hover {
+    opacity: 1;
+}
+
+/*
+---------
+MAIN.html
+---------
+*/
+
+/* TOPO */
+.greeting h2 {
+    font-size: 36px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+.header_cards {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background: #2C2929;
+    transition: 0.2s;
+}
+
+/* HOVER leve */
+.card:hover {
+    transform: translateY(-2px);
+    background: #333;
+}
+
+/* TEXTO */
+.card_label {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
+}
+
+.card h4 {
+    font-size: 24px;
+    color: #FFFFFF;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+/* BARRA DE FILTROS */
+
+.filters_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px 0;
+}
+
+/* GRUPO DE FILTROS */
+.filters {
+    display: flex;
+    gap: 24px;
+}
+
+/* BOTÕES */
+.filter {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 4px;
+    position: relative;
+    transition: 0.2s;
+}
+
+/* HOVER */
+.filter:hover {
+    color: #FFFFFF;
+}
+
+/* ATIVO (linha embaixo) */
+.filter.active {
+    color: #FFFFFF;
+}
+
+.filter.active::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #FFFFFF;
+    border-radius: 2px;
+}
+
+/* SEÇÃO DO DASHBOARD PRINCIPAL */
+.main_dashboard {
+    background: #2C2929;
+    border-radius: 16px;
+    padding: 0px 16px;
+    overflow-y: auto;    /* só a tabela scrolla */
+    margin-top: 24px;
+    flex: 1;
+    min-height: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+/*Scrollbar braba customizada*/
+/* largura */
+.main_dashboard::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* trilho */
+.main_dashboard::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* barra */
+.main_dashboard::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    transition: 0.2s;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
+/* hover */
+.main_dashboard::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* TABELA */
+
+.clients_table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+    font-size: 14px;
+}
+
+/* HEADER */
+.clients_table thead{
+    align-items: center;
+}
+
+.clients_table thead th {
+    position: sticky;
+    top: 0;
+    background: #2C2929;
+    z-index: 2;
+    text-align: left;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    padding: 20px 12px;
+    font-size: 14px;
+}
+
+/* LINHAS */
+.table_row {
+    border-top: 1px solid rgba(255,255,255,0.05);
+    transition: 0.2s;
+}
+
+.table_row:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+/* CÉLULAS */
+.clients_table td {
+    padding: 14px 12px;
+}
+
+/* CLIENTE */
+.client_info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* ESCONDE O ORIGINAL */
+.checkbox_input {
+    display: none;
+}
+
+/* CAIXA */
+.checkbox_custom {
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid rgba(255,255,255,0.3);
+    border-radius: 4px;
+    background: transparent;
+    position: relative;
+    transition: 0.2s;
+}
+
+/* HOVER */
+.checkbox:hover .checkbox_custom {
+    border-color: rgba(255,255,255,0.6);
+}
+
+/* CHECKED */
+.checkbox_input:checked + .checkbox_custom {
+    background: #8E4BAA; 
+    border-color: #8E4BAA;
+}
+
+/* CHECK ICON */
+.checkbox_custom::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 7px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+/* MOSTRA CHECK */
+.checkbox_input:checked + .checkbox_custom::after {
+    opacity: 1;
+}
+
+/* AVATAR */
+.client_profile {
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #1B1B1B;
+}
+
+/* AJUSTE DOS ÍCONES */
+.client_avatar {
+    opacity: 0.7;
+    transition: 0.2s;
+    filter: brightness(0.7);
+    color: white;
+}
+
+.client_profile:hover {
+    background: rgba(255, 255, 255, 0.08);
+    .user_avatar {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+.client_name {
+    font-weight: 500;
+    margin: 0;            /* remove a margem padrão do <p> */
+    line-height: 1.2;
+}
+
+.client_role {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    display: block;       /* garante que o <span> respeite o fluxo de bloco */
+    margin-top: 2px;      /* respiro mínimo entre nome e cargo */
+}
+
+/* TEXTO SECUNDÁRIO */
+.muted {
+    color: rgba(255,255,255,0.5);
+}
+
+/* STATUS */
+.badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
+/* VARIAÇÕES */
+.badge.lead {
+    background: rgba(255,255,255,0.1);
+    color: #ccc;
+}
+
+.badge.negociacao {
+    background: rgba(168,85,247,0.2);
+    color: #A855F7;
+}
+
+.badge.ativo {
+    background: rgba(34,197,94,0.2);
+    color: #22C55E;
+}
+
+.badge.concluido {
+    background: rgba(59,130,246,0.2);
+    color: #3B82F6;
+}
+
+.badge.perdido {
+    background: rgba(239,68,68,0.2);
+    color: #EF4444;
+}
+
+/* AÇÕES */
+.actions {
+    text-align: right;
+}
+
+.action_btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+}
+
+.action_btn:hover {
+    color: white;
+}
+
+/* cursor */
+.sortable {
+    cursor: pointer;
+    position: relative;
+}
+
+/* hover */
+.sortable:hover {
+    color: #FFFFFF;
+}
+
+/* setinhas */
+.sortable::after {
+    content: "↕";
+    font-size: 10px;
+    margin-left: 6px;
+    opacity: 0.3;
+}
+
+/* ativo */
+.sortable.active::after {
+    opacity: 1;
+}
+
+/* direção */
+.sortable.asc::after {
+    content: "↑";
+}
+
+.sortable.desc::after {
+    content: "↓";
+}
+
+#cargo {
+    margin-top: 15px;
+}
+
+#empresa {
+    margin-top: 10px;
+}
+
+/*Criar Cliente*/
+.modal {
+    display: none; /* escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    z-index: 9999; /* importante */
+
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+.modal_content {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+
+    z-index: 10000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 400px;
+}
+*/
+
+/* ==================================================================
+--- MODAL NOVO CLIENTE ---------------------------------------------
+================================================================== */
+
+#modalCliente .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#modalCliente h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#modalCliente label {
+    font-size: 16px;
+    color: #697077;
+    margin-bottom: 4px;
+}
+
+#modalCliente input,
+#modalCliente select,
+#modalCliente textarea {
+    background: #2C2929;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 15px;
+    padding: 12px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#modalCliente textarea {
+    height: 140px;
+    resize: none;
+}
+
+#modalCliente .modal_row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+#modalCliente .modal_field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#modalCliente .select_wrapper {
+    position: relative;
+}
+
+#modalCliente .select_wrapper::after {
+    content: "▾";
+    color: #697077;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#modalCliente button:first-of-type {
+    background: #8E4BAA;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#modalCliente button:first-of-type:hover {
+    background: #7a3d96;
+}
+
+#modalCliente button:last-of-type {
+    display: none;
+}
+
+/* --- FIM MODAL NOVO CLIENTE ------------------------------------ */
+
+/* ==================================================================
+--- MODAL FEEDBACK -------------------------------------------------
+================================================================== */
+
+#modalFeedback .modal_content,
+#modalConfirmar .modal_content,
+#modalConfirmarConta .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: left;
+}
+
+#modalFeedback h2,
+#modalConfirmar h2,
+#modalConfirmarConta h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+#modalFeedback p,
+#modalConfirmar p,
+#modalConfirmarConta p {
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 1.5;
+}
+
+#modalFeedback button,
+#modalConfirmar button,
+#modalConfirmarConta button {
+    background: #8E4BAA;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#modalConfirmar #btnConfirmarExcluir,
+#modalConfirmarConta #btnConfirmarExcluirConta {
+    background: #AA4B4B;
+}
+
+#modalConfirmar #btnConfirmarExcluir:hover,
+#modalConfirmarConta #btnConfirmarExcluirConta:hover {
+    background: #8f3e3e;
+}
+
+#modalFeedback button:hover,
+#modalConfirmar button:hover,
+#modalConfirmarConta button:hover {
+    background: #7a3d96;
+}
+
+/* --- FIM MODAL FEEDBACK ---------------------------------------- */
+
+/* ==================================================================
+--- MODAL EDITAR CLIENTE -------------------------------------------
+================================================================== */
+
+#crudModal .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#crudModal h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#crudModal label {
+    font-size: 16px;
+    color: #697077;
+    margin-bottom: 4px;
+}
+
+#crudModal input,
+#crudModal select,
+#crudModal textarea {
+    background: #2C2929;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 15px;
+    padding: 12px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#crudModal textarea {
+    height: 140px;
+    resize: none;
+}
+
+#crudModal .select_wrapper {
+    position: relative;
+}
+
+#crudModal .select_wrapper::after {
+    content: "▾";
+    color: #697077;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#crudModal button:first-of-type {
+    background: #8E4BAA;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#crudModal button:first-of-type:hover {
+    background: #7a3d96;
+}
+
+#crudModal button:nth-of-type(2) {
+    background: #AA4B4B;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#crudModal button:nth-of-type(2):hover {
+    background: #8f3e3e;
+}
+
+#crudModal button:last-of-type {
+    background: #2C2929;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#crudModal button:last-of-type:hover {
+    background: #3a3737;
+}
+
+/* --- FIM MODAL EDITAR CLIENTE ---------------------------------- */
+
+.date_selects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 8px;
+}
+
+/* ==================================================================
+--- MODAL CONFIGURAÇÕES --------------------------------------------
+================================================================== */
+
+#modalConfiguracoes .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#modalConfiguracoes h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#modalConfiguracoes button:first-of-type {
+    background: #8E4BAA;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#modalConfiguracoes button:first-of-type:hover {
+    background: #7a3d96;
+}
+
+#modalConfiguracoes button:nth-of-type(2) {
+    background: #AA4B4B;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#modalConfiguracoes button:nth-of-type(2):hover {
+    background: #8f3e3e;
+}
+
+#modalConfiguracoes button:last-of-type {
+    background: #2C2929;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#modalConfiguracoes button:last-of-type:hover {
+    background: #3a3737;
+}
+
+/* --- FIM MODAL CONFIGURAÇÕES ----------------------------------- */
+
+/* ==================================================================
+--- MODAL ALTERAR SENHA --------------------------------------------
+================================================================== */
+
+#modalSenha .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#modalSenha h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#modalSenha input {
+    background: #2C2929;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 15px;
+    padding: 12px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#modalSenha input::placeholder {
+    color: #697077;
+}
+
+#modalSenha button:first-of-type {
+    background: #8E4BAA;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#modalSenha button:first-of-type:hover {
+    background: #7a3d96;
+}
+
+#modalSenha button:last-of-type {
+    background: #2C2929;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#modalSenha button:last-of-type:hover {
+    background: #3a3737;
+}
+
+/* --- FIM MODAL ALTERAR SENHA ----------------------------------- */
+
+/* ==================================================================
+--- MODAL VER CLIENTE ----------------------------------------------
+================================================================== */
+
+#modalVerCliente .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 780px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 85vh;
+}
+
+.cliente_view_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cliente_view_header h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal_close_btn {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.5);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: 0.2s;
+    line-height: 1;
+}
+
+.modal_close_btn:hover {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+.cliente_view_meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon_btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.2s;
+    padding: 4px 6px;
+    border-radius: 6px;
+    color: white;
+}
+
+.icon_btn:hover {
+    opacity: 1;
+    background: rgba(255,255,255,0.08);
+}
+
+.cliente_view_body {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.cliente_view_descricao {
+    flex: 1;
+    background: #2C2929;
+    border-radius: 10px;
+    padding: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cliente_view_descricao p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+.cliente_view_interacoes {
+    flex: 1;
+    background: #2C2929;
+    border-radius: 10px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.cliente_view_interacoes::-webkit-scrollbar {
+    width: 10px;
+}
+
+.cliente_view_interacoes::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.cliente_view_interacoes::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+}
+
+.cliente_view_interacoes::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.cliente_view_actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn_danger {
+    background: #AA4B4B;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn_danger:hover { background: #8f3e3e; }
+
+.btn_purple {
+    background: #8E4BAA;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn_purple:hover { background: #7a3d96; }
+
+/* --- FIM MODAL VER CLIENTE ------------------------------------- */
+
+/* ==================================================================
+--- MODAIS DE INTERAÇÃO --------------------------------------------
+================================================================== */
+
+#modalNovaInteracao .modal_content,
+#modalEditarInteracao .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#modalNovaInteracao h2,
+#modalEditarInteracao h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+#modalNovaInteracao input,
+#modalNovaInteracao select,
+#modalNovaInteracao textarea,
+#modalEditarInteracao input,
+#modalEditarInteracao select,
+#modalEditarInteracao textarea {
+    background: #2C2929;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 15px;
+    padding: 12px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+#modalNovaInteracao textarea,
+#modalEditarInteracao textarea {
+    height: 140px;
+    resize: none;
+}
+
+#modalNovaInteracao label,
+#modalEditarInteracao label {
+    font-size: 16px;
+    color: #697077;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#modalNovaInteracao .modal_field,
+#modalEditarInteracao .modal_field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#modalNovaInteracao .select_wrapper,
+#modalEditarInteracao .select_wrapper {
+    position: relative;
+}
+
+#modalNovaInteracao .select_wrapper::after,
+#modalEditarInteracao .select_wrapper::after {
+    content: "▾";
+    color: #697077;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+#modalNovaInteracao button:first-of-type,
+#modalEditarInteracao button:first-of-type {
+    background: #8E4BAA;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+#modalNovaInteracao button:first-of-type:hover,
+#modalEditarInteracao button:first-of-type:hover {
+    background: #7a3d96;
+}
+
+#modalNovaInteracao button:last-of-type,
+#modalEditarInteracao button:last-of-type {
+    background: #2C2929;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#modalNovaInteracao button:last-of-type:hover,
+#modalEditarInteracao button:last-of-type:hover {
+    background: #3a3737;
+}
+
+#modalVerInteracao .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Agrupa confirmar interação com os outros modais de confirmação */
+#modalConfirmarInteracao .modal_content {
+    background: #1B1B1B;
+    border-radius: 16px;
+    padding: 40px;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#modalConfirmarInteracao h2 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+#modalConfirmarInteracao p {
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 1.5;
+}
+
+#modalConfirmarInteracao button:first-of-type {
+    background: #AA4B4B;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#modalConfirmarInteracao button:first-of-type:hover {
+    background: #8f3e3e;
+}
+
+#modalConfirmarInteracao button:last-of-type {
+    background: #2C2929;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#modalConfirmarInteracao button:last-of-type:hover {
+    background: #3a3737;
+}
+
+#modalFeedback {
+    position: fixed;
+    z-index: 99999;
+}
+/* --- FIM MODAIS DE INTERAÇÃO ----------------------------------- */
+
+.active_menu {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.active_menu p {
+    font-weight: 700;
+}
+
+/* ==================================================================
+--- MODAL SUPORTE ---------------------------------------------------
+================================================================== */
+
+.modal_subtitle {
+    color: #697077;
+    font-size: 14px;
+    margin-top: -8px;
+    margin-bottom: 12px;
+}
+
+#modalSuporte .modal_content {
+    width: 550px;
+}
+
+#modalSuporte textarea {
+    min-height: 140px;
+}
+
+.modal_actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn_cancelar {
+    flex: 1;
+    background-color: #2C2929;
+    border-radius: 5px;
+}
+
+.btn_enviar {
+    flex: 2;
+    background: #8E4BAA;
+    border-radius: 5px;
+}
+
+.support_icon {
+    font-size: 42px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#modalSuporte input:focus,
+#modalSuporte select:focus,
+#modalSuporte textarea:focus {
+    outline: 2px solid #8E4BAA;
+}
+
+#modalSuporte .modal_content {
+    background-color: #1B1B1B !important;
+    border-radius: 16px;
+    padding: 25px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#modalSuporte h2 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+#contadorMensagem {
+    color: #FFFFFF;
+}
+
+#modalSuporte button {
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* --- FIM MODAL SUPORTE ---------------------------------------- */
